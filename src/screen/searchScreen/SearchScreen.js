@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import MailsBody from "../../components/mailBody/MailsBody";
-import "./_searchScreen.scss";
 
 const SearchScreen = () => {
   const searchMails = useSelector((state) => state.searchMails);
