@@ -32,10 +32,10 @@ export const fetchUserMails = (tag, userId) => async (dispatch) => {
 
     if (tag !== "all") {
       data = data.filter((mail) => {
-        return mail.tag === tag && mail.userId == userId;
+        return mail.tag === tag && mail.userId.toString() === userId;
       });
     } else {
-      data = data.filter((mail) => mail.userId == userId);
+      data = data.filter((mail) => mail.userId.toString() === userId);
     }
     dispatch({ type: USER_MAILS_SUCCESS, payload: data });
   } catch (error) {

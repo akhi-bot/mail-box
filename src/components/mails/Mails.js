@@ -21,7 +21,7 @@ const Mails = (props) => {
               key={userId}
               onClick={goToMailBody(mailTag, userId)}
             >
-              <p className="mails__list__left">🕴 {`User ${userId}`}</p>
+              <p className="mails__list__left"> {`User ${userId}`}</p>
               <p className="mails__list__right">
                 <span className="bg-secondary border border-dark">
                   {mails.filter((x) => x.userId === userId).at(-1)?.tag}
