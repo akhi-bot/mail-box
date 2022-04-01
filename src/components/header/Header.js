@@ -4,22 +4,18 @@ import "./_header.scss";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch, AiFillSetting } from "react-icons/ai";
 import { MdApps } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { searchMails } from "../../redux/actions/searchAction";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({ handlerToggleSidebar }) => {
   const [input, setInput] = useState("");
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input) {
-      dispatch(searchMails(input));
       navigate(`/search?q=${input}`);
+      setInput("");
     }
-    setInput("");
   };
   return (
     <div className="border border-dark header">

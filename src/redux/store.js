@@ -3,13 +3,7 @@ import thunk from "redux-thunk";
 import { mailsReducer, userMailsReducer } from "./reducers/mailsReducer";
 import { searchMailsReducer } from "./reducers/searchReducers";
 
-const initialState = {
-  // searchMails: {
-  //   mails: window.localStorage.getItem("searchItems")
-  //     ? JSON.parse(window.localStorage.getItem("searchItems"))
-  //     : [],
-  // },
-};
+const initialState = {};
 
 const reducer = combineReducers({
   mails: mailsReducer,
