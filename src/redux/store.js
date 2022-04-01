@@ -5,8 +5,8 @@ import { searchMailsReducer } from "./reducers/searchReducers";
 
 const initialState = {
   searchMails: {
-    mails: localStorage.getItem("searchItems")
-      ? JSON.parse(localStorage.getItem("searchItems"))
+    mails: window.localStorage.getItem("searchItems")
+      ? JSON.parse(window.localStorage.getItem("searchItems"))
       : [],
   },
 };

@@ -18,7 +18,7 @@ export const searchMails = (keyword) => async (dispatch, getState) => {
       );
     });
     dispatch({ type: SEARCH_MAILS_SUCCESS, payload: data });
-    localStorage.setItem(
+    window.localStorage.setItem(
       "searchItems",
       JSON.stringify(getState().searchMails.mails)
     );
