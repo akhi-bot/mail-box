@@ -1,0 +1,64 @@
+@import "../../_base.scss";
+
+.mails {
+  width: 100%;
+  padding-left: 0;
+  margin-left: 0;
+
+  &__list {
+    list-style: none;
+    min-height: 5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 4em;
+    transition: 0.3s ease-in;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    &__left {
+      flex: 0.1;
+    }
+
+    &__right {
+      flex: 0.9;
+      @include line-clamp(1);
+      span {
+        margin-right: 1em;
+        padding: 5px;
+        border-radius: 2rem;
+      }
+    }
+
+    &:hover {
+      box-shadow: inset 1px 0 0 $black-secondary,
+        inset -1px 0 0 $black-secondary, 0 1px 2px 0 $border-color,
+        0 1px 3px 1px $border-color;
+      transform: scale(1.001);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .mails__list {
+    flex-direction: column;
+    padding-left: 0.5rem !important;
+
+    &__left {
+      align-self: start;
+    }
+    &__right {
+      @include line-clamp(2);
+
+      span {
+        display: block;
+        width: max-content;
+        border-radius: 0.2rem;
+        padding: 0;
+      }
+    }
+  }
+}
