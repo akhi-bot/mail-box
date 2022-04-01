@@ -18,6 +18,10 @@ export const searchMails = (keyword) => async (dispatch, getState) => {
       );
     });
     dispatch({ type: SEARCH_MAILS_SUCCESS, payload: data });
+    localStorage.setItem(
+      "searchItems",
+      JSON.stringify(getState().searchMails.mails)
+    );
   } catch (error) {
     dispatch({ type: SEARCH_MAILS_FAIL, payload: error.message });
   }

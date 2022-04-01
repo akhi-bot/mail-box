@@ -1,22 +1,13 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import MailsBody from "../../components/mailBody/MailsBody";
-import { searchMails } from "../../redux/actions/searchAction";
 
 const SearchScreen = () => {
-  const searchedMails = useSelector((state) => state.searchMails);
-  console.log(searchedMails);
-  const input = useSearchParams()[0].get("q");
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(searchMails(input));
-  }, [dispatch, input]);
+  const searchMails = useSelector((state) => state.searchMails);
+  console.log(searchMails);
 
   return (
     <>
-      <MailsBody searchScreen mailsInfo={searchedMails} />
+      <MailsBody searchScreen mailsInfo={searchMails} />
     </>
   );
 };
